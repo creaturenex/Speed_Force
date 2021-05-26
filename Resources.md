@@ -14,3 +14,7 @@
 
 ## FutureHack
 [Github/futurehack](https://github.com/newrelic-experimental/futurehack-2021)
+
+## Design
+[Diagram](https://app.diagrams.net/#G1dzCEtUDUODLfOPUGQgbh6sZLTk7GvOUI)
+[Slides](https://docs.google.com/presentation/d/1sOXEFqLaHV4cny3flUXGboDEPhy7vE7ZCMZbAqmnaXM/edit#slide=id.gdcc35785f0_0_125)
