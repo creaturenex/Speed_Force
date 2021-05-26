@@ -24,5 +24,5 @@ When the user opens the app they get two options "Stop" and "Run". The app runs 
 
 # Screenshots
 <pre>
-<img src="screenshots/HomeScreen.jpg" width="250"> <img src="screenshots/account.jpg" width="250"> <img src="screenshots/prompt.jpg" width="250"> <img src="screenshots/notification.jpg" width="250">
+<img src="screenshots/HomeScreen.jpg" width="250"> <img src="screenshots/account.jpg" width="250"> <img src="screenshots/prompt.jpg" width="250"> <img src="screenshots/notification.jpg" width="250"> <img src="screenshots/Nearby.jpg" width="250">
 </pre>
