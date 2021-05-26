@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sonicforce/screens/home.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -7,15 +8,13 @@ class Profile extends StatefulWidget {
 }
 
 class ProfileState extends State<Profile> {
-  double screenHeight;
+  late double screenHeight;
   var scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
 
     final nameController = TextEditingController();
-    final interestsController = TextEditingController();
-    final skillsController = TextEditingController();
 
     return SafeArea(
       child: Scaffold(
@@ -51,8 +50,8 @@ class ProfileState extends State<Profile> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           new CircleAvatar(
-                            backgroundImage:
-                                AssetImage('assets/programmer.png'),
+                            backgroundImage: NetworkImage(
+                                'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'),
                             radius: 70,
                           ),
                           new Padding(padding: EdgeInsets.only(top: 20.0)),
@@ -67,7 +66,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "Name can not be empty";
                               } else {
                                 return null;
@@ -89,7 +88,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "Contact number cannot be empty";
                               } else {
                                 return null;
@@ -116,7 +115,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -138,7 +137,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -160,7 +159,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -182,7 +181,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -236,7 +235,13 @@ class ProfileState extends State<Profile> {
                                           ),
                                         ),
                                       ),
-                                      onPressed: () {}),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Home()),
+                                        );
+                                      }),
                                 ),
                               ],
                             ),
