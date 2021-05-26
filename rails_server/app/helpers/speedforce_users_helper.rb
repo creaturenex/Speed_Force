@@ -1,0 +1,2 @@
+module SpeedforceUsersHelper
+end

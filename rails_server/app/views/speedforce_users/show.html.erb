@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @speedforce_user.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @speedforce_user.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @speedforce_user.email %>
+</p>
+
+<p>
+  <strong>Emergency contact name:</strong>
+  <%= @speedforce_user.emergency_contact_name %>
+</p>
+
+<p>
+  <strong>Emergency contact phone:</strong>
+  <%= @speedforce_user.emergency_contact_phone %>
+</p>
+
+<p>
+  <strong>Emergency contact email:</strong>
+  <%= @speedforce_user.emergency_contact_email %>
+</p>
+
+<p>
+  <strong>Force:</strong>
+  <%= @speedforce_user.force %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @speedforce_user.speed %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @speedforce_user.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @speedforce_user.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_speedforce_user_path(@speedforce_user) %> |
+<%= link_to 'Back', speedforce_users_path %>
