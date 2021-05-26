@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sonicforce/screens/account.dart';
+import 'package:sensors/sensors.dart';
+import 'package:sonicforce/screens/safe.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,6 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  double g;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,20 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        accelerometerEvents.listen((AccelerometerEvent event) {
+                          g = sqrt(event.x * event.x +
+                              event.y * event.y +
+                              event.z * event.z);
+                          if (g > 13) {
+                            g = 5;
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Safe()),
+                            );
+                          }
+                        });
+                      },
                     ),
                   ),
                 ),
