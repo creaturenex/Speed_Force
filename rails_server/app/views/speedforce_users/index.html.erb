@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Speedforce Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Emergency contact name</th>
+      <th>Emergency contact phone</th>
+      <th>Emergency contact email</th>
+      <th>Force</th>
+      <th>Speed</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @speedforce_users.each do |speedforce_user| %>
+      <tr>
+        <td><%= speedforce_user.name %></td>
+        <td><%= speedforce_user.phone %></td>
+        <td><%= speedforce_user.email %></td>
+        <td><%= speedforce_user.emergency_contact_name %></td>
+        <td><%= speedforce_user.emergency_contact_phone %></td>
+        <td><%= speedforce_user.emergency_contact_email %></td>
+        <td><%= speedforce_user.force %></td>
+        <td><%= speedforce_user.speed %></td>
+        <td><%= speedforce_user.latitude %></td>
+        <td><%= speedforce_user.longitude %></td>
+        <td><%= link_to 'Show', speedforce_user %></td>
+        <td><%= link_to 'Edit', edit_speedforce_user_path(speedforce_user) %></td>
+        <td><%= link_to 'Destroy', speedforce_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Speedforce User', new_speedforce_user_path %>

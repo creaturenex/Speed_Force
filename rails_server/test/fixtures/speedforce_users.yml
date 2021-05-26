@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  email: MyString
+  emergency_contact_name: MyString
+  emergency_contact_phone: MyString
+  emergency_contact_email: MyString
+  force: MyString
+  speed: MyString
+  latitude: MyString
+  longitude: MyString
+
+two:
+  name: MyString
+  phone: MyString
+  email: MyString
+  emergency_contact_name: MyString
+  emergency_contact_phone: MyString
+  emergency_contact_email: MyString
+  force: MyString
+  speed: MyString
+  latitude: MyString
+  longitude: MyString
