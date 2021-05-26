@@ -19,3 +19,11 @@
 [Diagram](https://app.diagrams.net/#G1dzCEtUDUODLfOPUGQgbh6sZLTk7GvOUI)
 
 [Slides](https://docs.google.com/presentation/d/1sOXEFqLaHV4cny3flUXGboDEPhy7vE7ZCMZbAqmnaXM/edit#slide=id.gdcc35785f0_0_125)
+
+## Rails
+[Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)
+
+[Digital Ocean How to build a Rails Application](https://www.digitalocean.com/community/tutorials/how-to-build-a-ruby-on-rails-application)
+
+[Digital Ocean How to add Bootstrap to Rails Application](https://www.digitalocean.com/community/tutorials/how-to-add-bootstrap-to-a-ruby-on-rails-application)
+- Not done but nice to have in the future
