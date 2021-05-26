@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:sonicforce/screens/home.dart';
-
+import 'package:telephony/telephony.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 
 final FlutterTts flutterTts = FlutterTts();
+onBackgroundMessage(SmsMessage message) {
+  debugPrint("onBackgroundMessage called");
+}
 
 class Safe extends StatefulWidget {
   @override
@@ -14,18 +19,85 @@ class Safe extends StatefulWidget {
 }
 
 class _SafeState extends State<Safe> {
-  stt.SpeechToText _speech;
+  late stt.SpeechToText _speech;
   bool _isListening = true;
-  String _text = 'H';
-
+  String _text = '';
+  String _message = "hi";
+  final telephony = Telephony.instance;
+  late Position _currentPosition;
+  late String _currentAddress;
   @override
   void initState() {
     super.initState();
     _speech = stt.SpeechToText();
     flutterTts.speak("Hi! Are you okay?");
+    initPlatformState();
+    _getCurrentLocation();
     // setState(() {
     //   _listen();
     // });
+  }
+
+  _getCurrentLocation() {
+    Geolocator.getCurrentPosition(
+            desiredAccuracy: LocationAccuracy.best,
+            forceAndroidLocationManager: true)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+        _getAddressFromLatLng();
+      });
+    }).catchError((e) {
+      print(e);
+    });
+  }
+
+  _getAddressFromLatLng() async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+          _currentPosition.latitude, _currentPosition.longitude);
+
+      Placemark place = placemarks[0];
+
+      setState(() {
+        _currentAddress =
+            "${place.locality}, ${place.postalCode}, ${place.country}";
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  onMessage(SmsMessage message) async {
+    setState(() {
+      _message = message.body ?? "Error reading message body.";
+    });
+  }
+
+  onSendStatus(SendStatus status) {
+    setState(() {
+      _message = status == SendStatus.SENT ? "sent" : "delivered";
+    });
+  }
+
+  final SmsSendStatusListener listener = (SendStatus status) {
+    // Handle the status
+  };
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+
+    final bool? result = await telephony.requestPhoneAndSmsPermissions;
+
+    if (result != null && result) {
+      telephony.listenIncomingSms(
+          onNewMessage: onMessage, onBackgroundMessage: onBackgroundMessage);
+    }
+
+    if (!mounted) return;
   }
 
   // Future _speak(String str) async {
@@ -83,26 +155,39 @@ class _SafeState extends State<Safe> {
                             ),
                           ),
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
+                        }),
                   ),
                   new Padding(padding: EdgeInsets.only(right: 10.0)),
                   Container(
                     width: MediaQuery.of(context).size.width / 2.5,
                     height: 50,
                     child: RaisedButton(
-                        elevation: 5,
-                        color: Color(0xff263284),
-                        child: Text(
-                          'No',
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400,
-                            ),
+                      elevation: 5,
+                      color: Color(0xff263284),
+                      child: Text(
+                        'No',
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
-                        onPressed: () {}),
+                      ),
+                      onPressed: () async {
+                        telephony.sendSms(
+                            to: "8299157332",
+                            message:
+                                "Hi! Your friend needs help. Their current location is " +
+                                    _currentAddress,
+                            statusListener: listener);
+                      },
+                    ),
                   ),
                 ],
               ),

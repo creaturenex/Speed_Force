@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  double g;
+  late double g;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -7,15 +7,13 @@ class Profile extends StatefulWidget {
 }
 
 class ProfileState extends State<Profile> {
-  double screenHeight;
+  late double screenHeight;
   var scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
 
     final nameController = TextEditingController();
-    final interestsController = TextEditingController();
-    final skillsController = TextEditingController();
 
     return SafeArea(
       child: Scaffold(
@@ -67,7 +65,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "Name can not be empty";
                               } else {
                                 return null;
@@ -89,7 +87,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "Contact number cannot be empty";
                               } else {
                                 return null;
@@ -116,7 +114,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -138,7 +136,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -160,7 +158,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
@@ -182,7 +180,7 @@ class ProfileState extends State<Profile> {
                               ),
                             ),
                             validator: (val) {
-                              if (val.length == 0) {
+                              if (val!.length == 0) {
                                 return "This field can not be empty";
                               } else {
                                 return null;
