@@ -16,14 +16,49 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        //brightness: Brightness.light,
+        backgroundColor: Color(0xff263284),
+        title: Text(
+          'Home',
+        ),
+        //   leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     icon: Icon(
+        //       Icons.arrow_back_ios,
+        //       size: 20,
+        //       color: Colors.black,
+        //     ),
+        //   ),
+      ),
+      backgroundColor: Color(0xffc6ceff),
       body: Container(
         child: Column(
           children: [
+            new Padding(padding: EdgeInsets.only(top: 20.0)),
             Image.asset(
               'assets/logo.png',
               // height: 250,
               // width: 250,
             ),
+            new Padding(padding: EdgeInsets.only(top: 20.0)),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text(
+                'Welcome! Speed Force\'s purpose is to detect a crash and to inform your designated emergency contact person that a possible crash has occurred. While similar tools exist, to our knowledge the nearby contacts feature is not incorporated',
+                style: GoogleFonts.raleway(
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+            new Padding(padding: EdgeInsets.only(top: 20.0)),
             Row(
               children: [
                 Container(

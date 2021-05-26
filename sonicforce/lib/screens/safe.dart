@@ -106,18 +106,19 @@ class _SafeState extends State<Safe> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffc6ceff),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: _isListening,
-        glowColor: Color(0xff87dcb2),
-        endRadius: 75.0,
+        glowColor: Color(0xff263284),
+        endRadius: 85.0,
         duration: const Duration(milliseconds: 8000),
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
         child: FloatingActionButton(
           onPressed: _listen,
           child: Icon(_isListening ? Icons.mic : Icons.mic_none),
-          backgroundColor: Color(0xff87dcb2),
+          backgroundColor: Color(0xff263284),
         ),
       ),
       body: Container(
@@ -135,6 +136,7 @@ class _SafeState extends State<Safe> {
                 ),
               ),
             ),
+            new Padding(padding: EdgeInsets.only(bottom: 50.0)),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
