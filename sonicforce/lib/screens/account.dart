@@ -19,25 +19,24 @@ class ProfileState extends State<Profile> {
 
     return SafeArea(
       child: Scaffold(
-
-          // appBar: AppBar(
-          //   elevation: 0,
-          //   //brightness: Brightness.light,
-          //   backgroundColor: Color(0xff263284),
-          //   title: Text(
-          //     'Profile',
-          //   ),
-          //   leading: IconButton(
-          //     onPressed: () {
-          //       Navigator.pop(context);
-          //     },
-          //     icon: Icon(
-          //       Icons.arrow_back_ios,
-          //       size: 20,
-          //       color: Colors.black,
-          //     ),
-          //   ),
-          // ),
+          appBar: AppBar(
+            elevation: 0,
+            //brightness: Brightness.light,
+            backgroundColor: Color(0xff263284),
+            title: Text(
+              'Profile',
+            ),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+          ),
           backgroundColor: Color(0xffc6ceff),
           body: Container(
               padding: const EdgeInsets.all(20.0),
@@ -48,6 +47,8 @@ class ProfileState extends State<Profile> {
                   child: new Container(
                     child: new Center(
                       child: new Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           new CircleAvatar(
                             backgroundImage:
@@ -58,7 +59,7 @@ class ProfileState extends State<Profile> {
                           new TextFormField(
                             controller: nameController,
                             decoration: new InputDecoration(
-                              labelText: "Username *",
+                              labelText: "Name *",
                               fillColor: Colors.white,
                               border: new OutlineInputBorder(
                                 borderRadius: new BorderRadius.circular(25.0),
@@ -107,7 +108,7 @@ class ProfileState extends State<Profile> {
                           // new Padding(padding: EdgeInsets.only(top: 20.0)),
                           new TextFormField(
                             decoration: new InputDecoration(
-                              labelText: "Github",
+                              labelText: "Email",
                               fillColor: Colors.white,
                               border: new OutlineInputBorder(
                                 borderRadius: new BorderRadius.circular(25.0),
@@ -129,7 +130,7 @@ class ProfileState extends State<Profile> {
                           new Padding(padding: EdgeInsets.only(top: 20.0)),
                           new TextFormField(
                             decoration: new InputDecoration(
-                              labelText: "Devpost",
+                              labelText: "Emergency contact name",
                               fillColor: Colors.white,
                               border: new OutlineInputBorder(
                                 borderRadius: new BorderRadius.circular(25.0),
@@ -151,7 +152,7 @@ class ProfileState extends State<Profile> {
                           new Padding(padding: EdgeInsets.only(top: 20.0)),
                           new TextFormField(
                             decoration: new InputDecoration(
-                              labelText: "Portfolio",
+                              labelText: "Emergency contact email",
                               fillColor: Colors.white,
                               border: new OutlineInputBorder(
                                 borderRadius: new BorderRadius.circular(25.0),
@@ -171,46 +172,74 @@ class ProfileState extends State<Profile> {
                             ),
                           ),
                           new Padding(padding: EdgeInsets.only(top: 20.0)),
-
-                          Row(
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width / 2,
-                                height: 50,
-                                child: RaisedButton(
-                                    elevation: 5,
-                                    color: Color(0xff263284),
-                                    child: Text(
-                                      'Save',
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w400,
+                          new TextFormField(
+                            decoration: new InputDecoration(
+                              labelText: "Emergency contact number",
+                              fillColor: Colors.white,
+                              border: new OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(25.0),
+                                borderSide: new BorderSide(),
+                              ),
+                            ),
+                            validator: (val) {
+                              if (val.length == 0) {
+                                return "This field can not be empty";
+                              } else {
+                                return null;
+                              }
+                            },
+                            keyboardType: TextInputType.url,
+                            style: new TextStyle(
+                              fontFamily: "Poppins",
+                            ),
+                          ),
+                          new Padding(padding: EdgeInsets.only(top: 20.0)),
+                          Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width / 2.5,
+                                  height: 50,
+                                  child: RaisedButton(
+                                      elevation: 5,
+                                      color: Color(0xff263284),
+                                      child: Text(
+                                        'Exit',
+                                        style: GoogleFonts.montserrat(
+                                          textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    onPressed: () {}),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width / 2,
-                                height: 50,
-                                child: RaisedButton(
-                                    elevation: 5,
-                                    color: Color(0xff263284),
-                                    child: Text(
-                                      'Save',
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w400,
+                                      onPressed: () {}),
+                                ),
+                                new Padding(
+                                    padding: EdgeInsets.only(right: 10.0)),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width / 2.5,
+                                  height: 50,
+                                  child: RaisedButton(
+                                      elevation: 5,
+                                      color: Color(0xff263284),
+                                      child: Text(
+                                        'Save',
+                                        style: GoogleFonts.montserrat(
+                                          textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    onPressed: () {}),
-                              ),
-                            ],
+                                      onPressed: () {}),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

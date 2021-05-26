@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sonicforce/screens/account.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -60,7 +61,12 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Profile()),
+                        );
+                      },
                     ),
                   ),
                 ),
