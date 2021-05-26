@@ -25,6 +25,11 @@ When the user opens the app they get two options "Stop" and "Run". The app runs 
   [![alt](https://img.youtube.com/vi/rzm_c_raNKc/0.jpg)](https://www.youtube.com/watch?v=rzm_c_raNKc)
 </center>
 
+## Link to presentation  : http://youtube.com/video/08i3jCKk3hs
+  
+  [![alt](https://img.youtube.com/vi/08i3jCKk3hs/0.jpg)](https://www.youtube.com/watch?v=08i3jCKk3hs)
+</center>
+
 # Screenshots
 <pre>
 <img src="screenshots/HomeScreen.jpg" width="250"> <img src="screenshots/account.jpg" width="250"> <img src="screenshots/prompt.jpg" width="250"> <img src="screenshots/notification.jpg" width="250"> <img src="screenshots/Nearby.jpg" width="250">
