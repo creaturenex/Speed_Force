@@ -17,3 +17,8 @@ TechStack
 - Ruby on Rails
 
 </center>
+
+# Screenshots
+<pre>
+<img src="screenshots/home.jpg" width="250"> <img src="screenshots/account.jpg" width="250"> <img src="screenshots/prompt.jpg" width="250"> <img src="screenshots/notification.jpg" width="250">
+</pre>
