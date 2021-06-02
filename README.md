@@ -3,7 +3,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Spinner_font_awesome.svg/240px-Spinner_font_awesome.svg.png">
 </p>
 
-**Speed Force** is an application who's purpose is to detect a crash and to inform your designated emergency contact person that a possible crash has occurred. While similar tools exist, to our knowledge the nearby contacts feature is not incorporated.
+**Speed Force** is an application meant to detect a crash through your smartphone and to inform your designated emergency contact person that a possible crash has occurred. While similar tools exist, to our knowledge the nearby contacts feature is not incorporated.
 
 Speed Force will send a prompt to nearby users informing them of a possible accident nearby and if they are willing to assist, in addition to the emergency contact.
   
