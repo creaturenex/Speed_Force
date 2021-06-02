@@ -20,12 +20,12 @@ This tool is meant to be used in a community setting to support each other. Mayb
   
 When the user opens the app they get two options "Stop" and "Run". The app runs in the background if user clicks on "Run". It uses Sensor plugin and gets accelerometer readings. Then it keeps on calculating gforce and when this gforce crosses threshold gforce which happens in the case of accident then the app asks user if they are okay and if the user doesn't reply within 15-20 seconds then a message with gps location is sent to the added emergency contact. We also considered the case in which phone gets damaged so as soon as the gforces crosses threshold the app send gps location of the user to emergency contact. 
   
-## Link to project demo : https://youtu.be/rzm_c_raNKc
+## [Speed Force Demo](https://youtu.be/vOXrTYrxWoI)
   
-  [![alt](https://img.youtube.com/vi/rzm_c_raNKc/0.jpg)](https://www.youtube.com/watch?v=rzm_c_raNKc)
+  [![alt]()](https://youtu.be/vOXrTYrxWoI)
 </center>
 
-## Link to presentation  : http://youtube.com/video/08i3jCKk3hs
+## Speed Force Presentation  : (http://youtube.com/video/08i3jCKk3hs)
   
   [![alt](https://img.youtube.com/vi/08i3jCKk3hs/0.jpg)](https://www.youtube.com/watch?v=08i3jCKk3hs)
 </center>
