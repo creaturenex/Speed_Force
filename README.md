@@ -20,7 +20,7 @@ When the user opens the app they get two options "Stop" and "Run". The app runs 
   
 ## [Speed Force Demo](https://youtu.be/vOXrTYrxWoI)
 
-[![Demo](https://i9.ytimg.com/vi/vOXrTYrxWoI/mq3.jpg?sqp=CLz03oUG&rs=AOn4CLCo13IY5D89LmjI5lo6g1mctGfhzA)](https://youtu.be/vOXrTYrxWoI)
+[![Demo](http://i3.ytimg.com/vi/vOXrTYrxWoI/hqdefault.jpg)](https://youtu.be/vOXrTYrxWoI)
 
 ## [Speed Force Presentation](http://youtube.com/video/08i3jCKk3hs)
 
