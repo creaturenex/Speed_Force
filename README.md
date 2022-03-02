@@ -9,6 +9,8 @@ Speed Force will send a prompt to nearby users informing them of a possible acci
   
 This tool is meant to be used in a community setting to support each other. Maybe at a busy intersection with local business or a sport team traveling, or maybe just getting groceries for loved ones.
 
+**This Project won New Relic's 2021 Futurestack Hackathon $10,000 Grand Prize!**
+
 ## TechStack
 - Flutter
 - Ruby
